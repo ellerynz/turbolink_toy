@@ -1,5 +1,13 @@
 {
   "name": "turbolink_toy",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "version": "1.0.0",
+  "description": "An application to try out turbolinks!",
+  "main": "index.js",
+  "author": "ellerynz <hello@ellerynz.com>",
+  "license": "MIT"
 }
