@@ -1,4 +1,5 @@
-<li>
+<li id="<%= item.to_param %>">
   <span><%= item.id %></span>
   <span><%= item.value %></span>
+  <span><%= link_to "Delete item", item, remote: true, method: :delete %></span>
 </li>

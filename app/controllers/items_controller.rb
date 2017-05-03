@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :find_item, only: [:destroy]
+
   def index
     @items = Item.all
     @item = Item.new
@@ -11,12 +13,25 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.save
         format.js
-        format.json { render json: @item, status: :created, location: @item }
+      end
+    end
+  end
+
+  def destroy
+    @item.destroy
+
+    respond_to do |format|
+      if @item.destroyed?
+        format.js
       end
     end
   end
 
   private
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:value)
