@@ -1,7 +1,24 @@
-<article>
+<section>
 
   <h1>Items</h1>
 
-  <ul></ul>
+  <% if @items.any? %>
+    <ul id="items">
+      <% @items.each do |item| %>
+        <%= render item %>
+      <% end %>
+    </ul>
+  <% else %>
+    <section>
+      <h2>Welcome!</h2>
+      <p>Get started by creating an item below.</p>
+    </section>
+  <% end %>
 
-</article>
+  <%= form_with(model: @item) do |f| %>
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+    <%= f.submit %>
+  <% end %>
+
+</section>
