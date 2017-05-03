@@ -1,13 +1,13 @@
-<section>
+<div class="container">
 
   <h1>Items</h1>
 
   <% if @items.any? %>
-    <ul id="items">
+    <div id="items" class="card-group">
       <% @items.each do |item| %>
         <%= render item %>
       <% end %>
-    </ul>
+    </div>
   <% else %>
     <section>
       <h2>Welcome!</h2>
@@ -21,4 +21,4 @@
     <%= f.submit %>
   <% end %>
 
-</section>
+</div>

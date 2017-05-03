@@ -1,5 +1,12 @@
-<li id="<%= item.to_param %>">
-  <span><%= item.id %></span>
-  <span><%= item.value %></span>
-  <span><%= link_to "Delete item", item, remote: true, method: :delete %></span>
-</li>
+<div id="<%= item.to_param %>" class="card card-outline-secondary">
+  <img class="card-img-top" src="http://lorempixel.com/400/200/sports">
+  <div class="card-block">
+    <h4 class="card-title">Item number <%= item.id %></h4>
+    <p class="card-text"><%= item.value %></p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+  <div class="card-block">
+    <a href="#" class="card-link">Card link</a>
+    <%= link_to "Delete item", item, remote: true, method: :delete %>
+  </div>
+</div>
