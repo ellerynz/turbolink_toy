@@ -9,6 +9,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container" data-turbolinks="true">
+      <h1><%= link_to "Items", items_path %></h1>
+      <%= yield %>
+    </div>
   </body>
 </html>

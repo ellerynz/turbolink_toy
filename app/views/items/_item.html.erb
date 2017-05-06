@@ -1,7 +1,7 @@
 <div id="<%= item.to_param %>" class="card card-outline-secondary">
   <img class="card-img-top" src="http://lorempixel.com/400/200/sports">
   <div class="card-block">
-    <h4 class="card-title">Item number <%= item.id %></h4>
+    <h4 class="card-title"><%= link_to "Item number #{item.id}", item_path(item) %></h4>
     <p class="card-text"><%= item.value %></p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
   </div>

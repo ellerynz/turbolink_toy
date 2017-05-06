@@ -4,3 +4,5 @@ document.getElementById("items").appendChild(div);
 // Replace the 'div' with the item html
 // so we only append the item and not the div
 div.outerHTML = '<%= escape_javascript(render @item) %>';
+
+document.getElementById('item-value').value = '';

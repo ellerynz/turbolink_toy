@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
 
-  before_action :find_item, only: [:destroy]
+  before_action :find_item, only: [:show, :destroy]
 
   def index
     @items = Item.all
     @item = Item.new
+  end
+
+  def show
   end
 
   def create
