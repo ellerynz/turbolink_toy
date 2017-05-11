@@ -1,11 +1,18 @@
-<div id="<%= item.to_param %>" class="card card-outline-secondary">
-  <div class="card-block">
-    <h4 class="card-title"><%= link_to "Item number #{item.id}", item_path(item) %></h4>
-    <p class="card-text"><%= item.value %></p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<div id="<%= item.to_param %>" class="card">
+  <div class="card-image">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="">
   </div>
-  <div class="card-block">
-    <a href="#" class="card-link">Card link</a>
-    <%= link_to "Delete item", item, remote: true, method: :delete %>
+  <div class="card-header">
+    <h4 class="card-title">Item number <%= item.id %></h4>
+  </div>
+  <div class="card-copy">
+    <p><%= item.value %></p>
+    <p><em>Last updated 3 mins ago</em></p>
+    <div class="flash-notice">
+      <%= link_to "Show", item_path(item, format: :html), class: "card-link" %>
+    </div>
+    <div class="flash-error">
+      <%= link_to "Delete item", item, class: "right", remote: true, method: :delete %>
+    </div>
   </div>
 </div>

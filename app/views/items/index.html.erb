@@ -1,18 +1,19 @@
-<% if @items.any? %>
-  <div id="items" class="card-group">
-    <% @items.each do |item| %>
-      <%= render item %>
-    <% end %>
-  </div>
-<% else %>
-  <section>
-    <h2>Welcome!</h2>
-    <p>Get started by creating an item below.</p>
-  </section>
-<% end %>
+<hr>
 
 <%= form_with(model: @item) do |f| %>
   <%= f.label :value %>
   <%= f.text_field :value, id: 'item-value' %>
   <%= f.submit %>
 <% end %>
+
+<hr>
+
+<div id="items" class="cards">
+  <% @items.each do |item| %>
+    <%= render item %>
+  <% end %>
+  <div id="no-items" style="<%= "display:none;" if @items.any? %>">
+    <h2>Welcome!</h2>
+    <p>Get started by creating an item.</p>
+  </div>
+</div>

@@ -1,5 +1,10 @@
 document.getElementById('<%= @item.to_param %>').outerHTML = '';
 
+if(!document.querySelectorAll('.card').length) {
+  document.getElementById('no-items').style.display = 'block';
+}
+
+// Return to the main page when deleting on the 'show' page
 if(!document.getElementById('items')) {
   Turbolinks.visit("<%= items_path %>");
 }
