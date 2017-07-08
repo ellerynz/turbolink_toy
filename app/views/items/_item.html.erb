@@ -7,12 +7,12 @@
   </div>
   <div class="card-copy">
     <p><%= item.value %></p>
-    <p><em>Last updated 3 mins ago</em></p>
+    <p><em>Last updated <%= time_ago_in_words(item.updated_at) %> ago</em></p>
     <div class="flash-notice">
       <%= link_to "Show", item_path(item, format: :html), class: "card-link" %>
     </div>
     <div class="flash-error">
-      <%= link_to "Delete item", item, class: "right", remote: true, method: :delete %>
+      <%= link_to "Delete item", item, class: "right", data: { disable_with: "Deleting...", remote: true, method: :delete }%>
     </div>
   </div>
 </div>

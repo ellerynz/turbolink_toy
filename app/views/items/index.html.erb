@@ -3,7 +3,7 @@
 <%= form_with(model: @item) do |f| %>
   <%= f.label :value %>
   <%= f.text_field :value, id: 'item-value' %>
-  <%= f.submit %>
+  <%= f.submit data: { disable_with: "Creating..." } %>
 <% end %>
 
 <hr>
